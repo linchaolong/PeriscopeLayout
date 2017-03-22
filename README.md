@@ -37,7 +37,7 @@ A layout with animation like Periscope's
       app:plDrawables="@array/drawables"/>
 ```
 
-支持自定义飘动的图形
+支持自定义动画的图形
 ```
   <integer-array name="drawables" >
     <item>@drawable/praise_01</item>
