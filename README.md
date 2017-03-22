@@ -28,28 +28,28 @@ A layout with animation like Periscope's
 
 ## Usage
 
-**Step One:**
-
+在 layout 中添加 PeriscopeLayout
 ```
-    <me.yifeiyuan.library.PeriscopeLayout
-        android:id="@+id/periscope"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:text="Hello World!"
-        android:background="#d2d2c9"
-        />
+<me.yifeiyuan.library.PeriscopeLayout
+      android:id="@+id/periscope"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:plDrawables="@array/drawables"/>
 ```
 
-**Step Two:**
-
+支持自定义飘动的图形
 ```
-        final PeriscopeLayout periscopeLayout = (PeriscopeLayout) findViewById(R.id.periscope);
-        periscopeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                periscopeLayout.addHeart();
-            }
-        });
+  <integer-array name="drawables" >
+    <item>@drawable/praise_01</item>
+    <item>@drawable/praise_02</item>
+    <item>@drawable/praise_03</item>
+    <item>@drawable/praise_04</item>
+  </integer-array>
+```
+
+在代码中通过调用 addOne 方法添加一个动画，`addOne(int index)` 支持通过索引指定动画使用哪个图形，默认随机选择一个图形。
+```
+periscopeLayout.addOne();
 ```
 
 ## Contributors

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <integer-array name="drawables" >
+    <item>@drawable/praise_01</item>
+    <item>@drawable/praise_02</item>
+    <item>@drawable/praise_03</item>
+    <item>@drawable/praise_04</item>
+  </integer-array>
+
+</resources>

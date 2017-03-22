@@ -8,17 +8,16 @@ import me.yifeiyuan.library.PeriscopeLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+  private PeriscopeLayout periscopeLayout;
 
-        final PeriscopeLayout periscopeLayout = (PeriscopeLayout) findViewById(R.id.periscope);
-        periscopeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                periscopeLayout.addHeart();
-            }
-        });
-    }
+  @Override protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    periscopeLayout = (PeriscopeLayout) findViewById(R.id.periscope);
+    findViewById(R.id.contentView).setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        periscopeLayout.addOne();
+      }
+    });
+  }
 }
