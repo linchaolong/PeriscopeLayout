@@ -76,6 +76,7 @@ public class PeriscopeLayout extends RelativeLayout {
   }
 
   private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+    Drawable[] drawables = null;
     if (attrs != null) {
       TypedArray a = context.getTheme()
           .obtainStyledAttributes(attrs, R.styleable.PeriscopeLayout, defStyleAttr, 0);
@@ -84,11 +85,11 @@ public class PeriscopeLayout extends RelativeLayout {
         if (arrId != 0) {
           TypedArray arr = context.getResources().obtainTypedArray(arrId);
           try {
-            Drawable[] drawables = new Drawable[arr.length()];
+            drawables = new Drawable[arr.length()];
             for (int i = 0; i < arr.length(); i++) {
               drawables[i] = arr.getDrawable(i);
             }
-            setDrawables(drawables);
+
           } finally {
             arr.recycle();
           }
@@ -96,7 +97,10 @@ public class PeriscopeLayout extends RelativeLayout {
       } finally {
         a.recycle();
       }
-    } else {
+    }
+    if(drawables != null){
+      setDrawables(drawables);
+    }else{
       // 默认显示的图片
       setDrawables(new int[] { R.drawable.pl_red, R.drawable.pl_yellow, R.drawable.pl_blue });
     }
