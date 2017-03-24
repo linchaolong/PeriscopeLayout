@@ -66,7 +66,8 @@ public class PeriscopeLayout extends RelativeLayout {
   }
 
   public PeriscopeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
-    this(context, attrs, defStyleAttr, 0);
+    super(context, attrs, defStyleAttr);
+    init(context, attrs, defStyleAttr);
   }
 
   @TargetApi(Build.VERSION_CODES.LOLLIPOP)
